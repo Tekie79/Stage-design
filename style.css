@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  background-color: rgb(46, 46, 46);
+  /* overflow-x: auto; */
+}
+
+.header {
+  text-align: center;
+  padding: 50px;
+  background-color: rgb(36, 35, 35);
+  width: 100%;
+  color: white;
+}
+.front-view {
+  display: flex;
+  /* margin-top: 20px; */
+  background-color: rgb(126, 125, 125);
+  height: 330px;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.projection {
+  background-color: rgb(35, 35, 36);
+  width: 210px;
+  height: 120px;
+  border: 1px solid rgb(43, 43, 43);
+  background-size: contain;
+  background-repeat: no-repeat;
+ 
+}
+.main-stage {
+  background-color: rgb(22, 22, 22);
+  width: 800px;
+  height: 100%;
+}
+.light-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.light {
+  width: 35px;
+  height: 35px;
+}
+
+.stage-bg {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20px;
+}
+.led-tubes {
+  display: flex;
+  gap: 30px;
+}
+.tube {
+  height: 100px;
+  width: 5px;
+  background-color: #0254f1;
+  border-radius: 3px;
+  box-shadow: 1px 1px 6px #0254f1;
+}
+.led-wall {
+  width: 386px;
+  height: 222px;
+  background-color: rgb(15, 87, 243);
+  display: flex;
+  object-fit: cover;
+}
+.step {
+  width: 100%;
+  height: 20px;
+  background-color: rgb(35, 38, 43);
+  border: 1px solid rgb(26, 25, 25);
+}
+.steps {
+  margin-top: 14px;
+}
+.man-standing {
+  height: 165px;
+  cursor: pointer;
+}
+.standing {
+  transform: translate(160px, 75px);
+}
+
+/* controllers */
+
+.controllers {
+  margin-top: 50px;
+  text-align: center;
+  color: white;
+}
+.scenes {
+  border-top: 1px solid rgb(87, 87, 87);
+  margin: 30px 120px;
+  display: flex;
+  padding-top: 20px;
+}
+.light-scenes {
+  width: 33%;
+}
+.screens {
+  width: 33%;
+}
+.led-wall_bg {
+  width: 33%;
+}
+.light-btns,
+.screen-btns,
+.wall-btns {
+  margin: 30px 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  width: 100px;
+  height: 70px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+  color: white;
+}
+.btn:hover {
+  transform: scale(1.02);
+}
+.btn-sky,
+.btn-scene06 {
+  background-color: rgb(34, 148, 255);
+  box-shadow: 1px 1px 5px rgb(84, 111, 129);
+}
+.btn-fire,
+.btn-scene02 {
+  background-color: rgb(248, 118, 43);
+  box-shadow: 1px 1px 5px rgb(129, 98, 84);
+}
+.btn-joy,
+.btn-scene04 {
+  background-color: rgb(224, 43, 248);
+  box-shadow: 1px 1px 5px rgb(129, 84, 114);
+}
+.btn-earth,
+.btn-scene05 {
+  background-color: rgb(40, 173, 190);
+  box-shadow: 1px 1px 5px rgb(84, 115, 129);
+}
+.btn-blood,
+.btn-scene03 {
+  background-color: rgb(180, 48, 48);
+  box-shadow: 1px 1px 5px rgb(129, 84, 84);
+}
+.btn-purple,
+.btn-scene01 {
+  background-color: rgb(166, 43, 248);
+  box-shadow: 1px 1px 5px rgb(111, 77, 128);
+}
+.btn-switch {
+  background-color: rgb(37, 37, 37);
+  box-shadow: 1px 1px 5px rgb(75, 75, 75);
+  font-size: 18px;
+}
+
+.stage-body, .controllers{
+    opacity: 0;
+}
+footer{
+    text-align: center;
+    color: rgb(128, 125, 125);
+    margin-top: 20px;
+    padding: 20px;
+    width: 100%;
+    background-color: rgb(39, 39, 39);
+}
