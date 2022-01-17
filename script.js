@@ -37,12 +37,17 @@ setTimeout(() => {
 const btnSwitch = document.querySelector(".btn-switch");
 const sideScreens = document.querySelectorAll(".projection");
 const frontView = document.querySelector(".front-view");
+const btnSlide = document.querySelectorAll(".btn-slide")
 // Functions
 
 btnSwitch.addEventListener("click", () => {
   if (btnSwitch.textContent === "OFF") {
     btnSwitch.textContent = "ON";
     btnSwitch.style.backgroundColor = "#4c9b60";
+    btnSlide.forEach(slide=>{
+        slide.style.backgroundColor="white";
+        slide.style.color="grey"
+    })
 
     frontView.animate(
       [
@@ -84,6 +89,11 @@ btnSwitch.addEventListener("click", () => {
     sideScreens.forEach((screen) => {
       screen.style.backgroundImage = "";
     });
+    //
+    btnSlide.forEach(slide=>{
+        slide.style.backgroundColor="rgb(128, 126, 126)";
+        slide.style.color="rgb(185, 184, 184)"
+    })
   }
 });
 
@@ -240,4 +250,90 @@ bloodBtn.addEventListener("click", () => {
       fill: "both",
     }
   );
+});
+
+// Earth mode
+earthBtn.addEventListener("click", () => {
+  lights.forEach((light) => {
+    light.src = "./images/light-cyan.png";
+  });
+  tubesArray.forEach((tube) => {
+    tube.animate(
+      [
+        {
+          backgroundColor: "#28ACBD",
+          boxShadow: "1px 1px 6px #28ACBD",
+        },
+      ],
+      {
+        duration: 1000,
+        interations: 1,
+        fill: "both",
+      }
+    );
+  });
+  //LED Wall
+  ledWall.animate(
+    [
+      {
+        backgroundColor: "#28ACBD",
+      },
+    ],
+    {
+      duration: 1000,
+      interations: 1,
+      fill: "both",
+    }
+  );
+});
+
+// Earth mode
+purpleBtn.addEventListener("click", () => {
+  lights.forEach((light) => {
+    light.src = "./images/light-purple.png";
+  });
+  tubesArray.forEach((tube) => {
+    tube.animate(
+      [
+        {
+          backgroundColor: "#9E16F9",
+          boxShadow: "1px 1px 6px #9E16F9",
+        },
+      ],
+      {
+        duration: 1000,
+        interations: 1,
+        fill: "both",
+      }
+    );
+  });
+  //LED Wall
+  ledWall.animate(
+    [
+      {
+        backgroundColor: "#9E16F9",
+      },
+    ],
+    {
+      duration: 1000,
+      interations: 1,
+      fill: "both",
+    }
+  );
+});
+
+// Standing man
+
+const person = document.querySelector(".man-standing");
+const darkSrc = "./images/teacher-black.png";
+const lightSrc = "./images/teacher.png";
+person.addEventListener("click", () => {
+  const srcAttr = person.getAttribute("data-src");
+  if (srcAttr === "dark") {
+    person.src = lightSrc;
+    person.setAttribute("data-src", "light");
+  } else {
+    person.src = darkSrc;
+    person.setAttribute("data-src", "dark");
+  }
 });

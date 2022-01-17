@@ -164,8 +164,8 @@ body {
 }
 .btn-purple,
 .btn-scene01 {
-  background-color: rgb(166, 43, 248);
-  box-shadow: 1px 1px 5px rgb(111, 77, 128);
+  background-color: rgb(159, 22, 250);
+  box-shadow: 1px 1px 5px rgb(145, 72, 182);
 }
 .btn-switch {
   background-color: rgb(37, 37, 37);
@@ -183,4 +183,9 @@ footer{
     padding: 20px;
     width: 100%;
     background-color: rgb(39, 39, 39);
+}
+
+.btn-slide{
+    color: rgb(185, 184, 184);
+    background-color: rgb(128, 126, 126);
 }
