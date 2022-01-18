@@ -35,10 +35,9 @@ body {
   border: 1px solid rgb(43, 43, 43);
   background-size: contain;
   background-repeat: no-repeat;
- 
 }
 .main-stage {
-  background-color: rgb(22, 22, 22);
+  background-color: rgb(15, 15, 15);
   width: 800px;
   height: 100%;
 }
@@ -90,6 +89,7 @@ body {
 }
 .standing {
   transform: translate(160px, 75px);
+  z-index: 1;
 }
 
 /* controllers */
@@ -173,19 +173,39 @@ body {
   font-size: 18px;
 }
 
-.stage-body, .controllers{
-    opacity: 0;
+.stage-body,
+.controllers {
+  opacity: 0;
 }
-footer{
-    text-align: center;
-    color: rgb(128, 125, 125);
-    margin-top: 20px;
-    padding: 20px;
-    width: 100%;
-    background-color: rgb(39, 39, 39);
+footer {
+  text-align: center;
+  color: rgb(128, 125, 125);
+  margin-top: 20px;
+  padding: 20px;
+  width: 100%;
+  background-color: rgb(39, 39, 39);
 }
 
-.btn-slide{
-    color: rgb(185, 184, 184);
-    background-color: rgb(128, 126, 126);
+.btn-slide {
+  color: rgb(185, 184, 184);
+  background-color: rgb(128, 126, 126);
+}
+
+/* Video Wall control */
+
+.video {
+  position: absolute;
+  animation: fade 1s ease-in;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.hide-video {
+  display: none;
 }

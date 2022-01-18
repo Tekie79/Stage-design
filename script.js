@@ -1,3 +1,4 @@
+const video = document.querySelector(".video");
 // window loading
 
 const stageBody = document.querySelector(".stage-body");
@@ -37,22 +38,22 @@ setTimeout(() => {
 const btnSwitch = document.querySelector(".btn-switch");
 const sideScreens = document.querySelectorAll(".projection");
 const frontView = document.querySelector(".front-view");
-const btnSlide = document.querySelectorAll(".btn-slide")
+const btnSlide = document.querySelectorAll(".btn-slide");
 // Functions
 
 btnSwitch.addEventListener("click", () => {
   if (btnSwitch.textContent === "OFF") {
     btnSwitch.textContent = "ON";
     btnSwitch.style.backgroundColor = "#4c9b60";
-    btnSlide.forEach(slide=>{
-        slide.style.backgroundColor="white";
-        slide.style.color="grey"
-    })
+    btnSlide.forEach((slide) => {
+      slide.style.backgroundColor = "white";
+      slide.style.color = "grey";
+    });
 
     frontView.animate(
       [
         {
-          backgroundColor: "#1B1B1B",
+          backgroundColor: "#141414",
         },
       ],
       {
@@ -90,10 +91,10 @@ btnSwitch.addEventListener("click", () => {
       screen.style.backgroundImage = "";
     });
     //
-    btnSlide.forEach(slide=>{
-        slide.style.backgroundColor="rgb(128, 126, 126)";
-        slide.style.color="rgb(185, 184, 184)"
-    })
+    btnSlide.forEach((slide) => {
+      slide.style.backgroundColor = "rgb(128, 126, 126)";
+      slide.style.color = "rgb(185, 184, 184)";
+    });
   }
 });
 
@@ -111,18 +112,18 @@ const lights = document.querySelectorAll(".light");
 const tubes = document.querySelectorAll(".tube");
 const tubesArray = [...tubes];
 const ledWall = document.querySelector(".led-wall");
-// sky mode
 
-skyBtn.addEventListener("click", () => {
+// light On Helper
+const toggleLight = (fileName, color) => {
   lights.forEach((light) => {
-    light.src = "./images/light-sky.png";
+    light.src = `./images/${fileName}.png`;
   });
   tubesArray.forEach((tube) => {
     tube.animate(
       [
         {
-          backgroundColor: "#2F98F9",
-          boxShadow: "1px 1px 6px #2F98F9",
+          backgroundColor: color,
+          boxShadow: `1px 1px 6px ${color}`,
         },
       ],
       {
@@ -136,7 +137,7 @@ skyBtn.addEventListener("click", () => {
   ledWall.animate(
     [
       {
-        backgroundColor: "#2F98F9",
+        backgroundColor: color,
       },
     ],
     {
@@ -145,181 +146,37 @@ skyBtn.addEventListener("click", () => {
       fill: "both",
     }
   );
+};
+
+// sky mode
+
+skyBtn.addEventListener("click", () => {
+  toggleLight("light-sky", "#2F98F9");
 });
 
 // fire mode
 
 fireBtn.addEventListener("click", () => {
-  lights.forEach((light) => {
-    light.src = "./images/light-orange.png";
-  });
-  tubesArray.forEach((tube) => {
-    tube.animate(
-      [
-        {
-          backgroundColor: "#F7762B",
-          boxShadow: "1px 1px 6px #F7762B",
-        },
-      ],
-      {
-        duration: 1000,
-        interations: 1,
-        fill: "both",
-      }
-    );
-  });
-  //LED Wall
-  ledWall.animate(
-    [
-      {
-        backgroundColor: "#F7762B",
-      },
-    ],
-    {
-      duration: 1000,
-      interations: 1,
-      fill: "both",
-    }
-  );
+  toggleLight("light-orange", "#F7762B");
 });
 // Joy mode
 joyBtn.addEventListener("click", () => {
-  lights.forEach((light) => {
-    light.src = "./images/light-pink.png";
-  });
-  tubesArray.forEach((tube) => {
-    tube.animate(
-      [
-        {
-          backgroundColor: "#DF2BF7",
-          boxShadow: "1px 1px 6px #DF2BF7",
-        },
-      ],
-      {
-        duration: 1000,
-        interations: 1,
-        fill: "both",
-      }
-    );
-  });
-  //LED Wall
-  ledWall.animate(
-    [
-      {
-        backgroundColor: "#DF2BF7",
-      },
-    ],
-    {
-      duration: 1000,
-      interations: 1,
-      fill: "both",
-    }
-  );
+  toggleLight("light-pink", "#DF2BF7");
 });
 
 // Blood mode
 bloodBtn.addEventListener("click", () => {
-  lights.forEach((light) => {
-    light.src = "./images/light-red.png";
-  });
-  tubesArray.forEach((tube) => {
-    tube.animate(
-      [
-        {
-          backgroundColor: "#B33030",
-          boxShadow: "1px 1px 6px #B33030",
-        },
-      ],
-      {
-        duration: 1000,
-        interations: 1,
-        fill: "both",
-      }
-    );
-  });
-  //LED Wall
-  ledWall.animate(
-    [
-      {
-        backgroundColor: "#B33030",
-      },
-    ],
-    {
-      duration: 1000,
-      interations: 1,
-      fill: "both",
-    }
-  );
+  toggleLight("light-red", "#B33030");
 });
 
 // Earth mode
 earthBtn.addEventListener("click", () => {
-  lights.forEach((light) => {
-    light.src = "./images/light-cyan.png";
-  });
-  tubesArray.forEach((tube) => {
-    tube.animate(
-      [
-        {
-          backgroundColor: "#28ACBD",
-          boxShadow: "1px 1px 6px #28ACBD",
-        },
-      ],
-      {
-        duration: 1000,
-        interations: 1,
-        fill: "both",
-      }
-    );
-  });
-  //LED Wall
-  ledWall.animate(
-    [
-      {
-        backgroundColor: "#28ACBD",
-      },
-    ],
-    {
-      duration: 1000,
-      interations: 1,
-      fill: "both",
-    }
-  );
+  toggleLight("light-cyan", "#28ACBD");
 });
 
-// Earth mode
+// purple mode
 purpleBtn.addEventListener("click", () => {
-  lights.forEach((light) => {
-    light.src = "./images/light-purple.png";
-  });
-  tubesArray.forEach((tube) => {
-    tube.animate(
-      [
-        {
-          backgroundColor: "#9E16F9",
-          boxShadow: "1px 1px 6px #9E16F9",
-        },
-      ],
-      {
-        duration: 1000,
-        interations: 1,
-        fill: "both",
-      }
-    );
-  });
-  //LED Wall
-  ledWall.animate(
-    [
-      {
-        backgroundColor: "#9E16F9",
-      },
-    ],
-    {
-      duration: 1000,
-      interations: 1,
-      fill: "both",
-    }
-  );
+  toggleLight("light-purple", "#9E16F9");
 });
 
 // Standing man
@@ -336,4 +193,61 @@ person.addEventListener("click", () => {
     person.src = darkSrc;
     person.setAttribute("data-src", "dark");
   }
+});
+
+// LED Wall Controls
+
+const sceneOne = document.querySelector(".btn-scene01");
+const sceneTwo = document.querySelector(".btn-scene02");
+const sceneThree = document.querySelector(".btn-scene03");
+const sceneFour = document.querySelector(".btn-scene04");
+const sceneFive = document.querySelector(".btn-scene05");
+const sceneSix = document.querySelector(".btn-scene06");
+
+// Controls
+
+const videoPlay = (fileName, playRate, projection) => {
+  video.src = `./videos/${fileName}.mp4`;
+  video.classList.remove("hide-video");
+  // video.play();
+  video.playbackRate = playRate;
+
+  // Projectors
+  if (btnSwitch.textContent === "ON") {
+    sideScreens.forEach((screen) => {
+      screen.style.backgroundImage = `url('./images/${projection}.jpg')`;
+    });
+  }
+};
+//blue
+sceneSix.addEventListener("click", () => {
+  videoPlay("blue", 0.4, "screen-blue");
+});
+
+// purple
+
+sceneOne.addEventListener("click", () => {
+  videoPlay("purple", 0.25, "screen-purple");
+  video.currentTime = 3;
+});
+
+// fire
+sceneTwo.addEventListener("click", () => {
+  videoPlay("fire", 0.3, "screen-fire");
+});
+
+// Red
+
+sceneThree.addEventListener("click", () => {
+  videoPlay("red", 0.4, "screen-red");
+});
+
+// pink
+
+sceneFour.addEventListener("click", () => {
+  videoPlay("pink", 0.25, "screen-pink");
+});
+
+sceneFive.addEventListener("click", () => {
+  videoPlay("cyan", 0.25, "screen-cyan");
 });
