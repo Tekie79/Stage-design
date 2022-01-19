@@ -6,14 +6,13 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
 body {
   background-color: rgb(46, 46, 46);
   /* overflow-x: auto; */
   height: 100%;
-  
 }
 
 .header {
@@ -272,6 +271,13 @@ footer {
   }
   .standing {
     transform: translate(120px, 75px);
+  }
+  .light {
+    width: 25px;
+    height: 25px;
+  }
+  .step {
+    height: 14px;
   }
 }
 @media (max-width: 420px) {
