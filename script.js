@@ -218,6 +218,7 @@ const videoPlay = (fileName, playRate, projection) => {
       screen.style.backgroundImage = `url('./images/${projection}.jpg')`;
     });
   }
+  window.scrollTo(0,0)
 };
 //blue
 sceneSix.addEventListener("click", () => {

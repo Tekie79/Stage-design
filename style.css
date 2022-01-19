@@ -6,10 +6,14 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
+html{
+  scroll-behavior: smooth;
+}
 body {
   background-color: rgb(46, 46, 46);
   /* overflow-x: auto; */
   height: 100%;
+  
 }
 
 .header {
@@ -74,6 +78,7 @@ body {
   background-color: rgb(15, 87, 243);
   display: flex;
   object-fit: cover;
+  position: relative;
 }
 .step {
   width: 100%;
@@ -195,6 +200,7 @@ footer {
 /* Video Wall control */
 
 .video {
+  width: 100%;
   position: absolute;
   animation: fade 1s ease-in;
 }
