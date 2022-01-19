@@ -9,11 +9,12 @@
 body {
   background-color: rgb(46, 46, 46);
   /* overflow-x: auto; */
+  height: 100%;
 }
 
 .header {
   text-align: center;
-  padding: 50px;
+  padding: 30px;
   background-color: rgb(36, 35, 35);
   width: 100%;
   color: white;
@@ -208,4 +209,80 @@ footer {
 }
 .hide-video {
   display: none;
+}
+
+/* responsive */
+
+@media (max-width: 940px) {
+  .projection {
+    display: none;
+  }
+  .screens {
+    display: none;
+  }
+  .light-scenes,
+  .led-wall_bg {
+    width: 50%;
+  }
+  .scenes {
+    margin: 40px 30px;
+  }
+  .btn {
+    width: 80px;
+    height: 60px;
+  }
+  .stage-body {
+    width: 100%;
+  }
+  .main-stage {
+    width: 100%;
+  }
+}
+@media (max-width: 647px) {
+  .scenes {
+    flex-direction: column;
+    margin: 40px 50px;
+  }
+  .light-scenes,
+  .led-wall_bg {
+    width: 100%;
+  }
+  .front-view {
+    height: 240px;
+  }
+  .led-wall {
+    width: 280px;
+    height: 161px;
+  }
+  .tube {
+    height: 65px;
+    width: 3px;
+  }
+  .led-tubes {
+    gap: 20px;
+  }
+  .man-standing {
+    height: 100px;
+  }
+  .standing {
+    transform: translate(120px, 75px);
+  }
+}
+@media (max-width: 420px) {
+  .led-wall {
+    width: 200px;
+    height: 115px;
+  }
+  .front-view {
+    height: 200px;
+  }
+  .man-standing {
+    height: 85px;
+  }
+  .standing {
+    transform: translate(86px, 45px);
+  }
+  .scenes {
+    margin: 40px 30px;
+  }
 }
